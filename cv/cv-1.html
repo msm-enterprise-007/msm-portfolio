@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mohamed Saobane MOUTALABI</title>
+    
+    <!-- Liens vers la charte du Portfolio (Fonts & Icons) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <style>
+        /* ===================================================== */
+        /* CHARTE GRAPHIQUE PORTFOLIO */
+        /* ===================================================== */
+        :root {
+            --bg: #f5f8ff;
+            --surface: #ffffff;
+            --text: #101828;
+            --muted: #667085;
+            --primary: #2563eb;
+            --primary-dark: #1749b8;
+            --hero-bg: #edf3ff;
+            --shadow: 0 10px 30px rgba(16,24,40,.08);
+            --border: #e7ecf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 6mm 8mm;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        /* ===================================================== */
+        /* HEADER SECTION */
+        /* ===================================================== */
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 8mm;
+            padding-bottom: 5mm;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 4mm;
+        }
+
+        .photo-container {
+            width: 32mm;
+            height: 32mm;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(37,99,235,.15);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 28pt;
+            font-weight: 900;
+            margin-bottom: 1mm;
+            letter-spacing: -1.5px;
+            color: var(--text);
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 11pt;
+            color: var(--primary);
+            margin-bottom: 3mm;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 4mm;
+            flex-wrap: wrap;
+            font-size: 8.5pt;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .contact-bar > div {
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .contact-bar i {
+            color: var(--primary);
+            font-size: 9pt;
+            width: 12px;
+            text-align: center;
+        }
+
+        .portfolio-link {
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .portfolio-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===================================================== */
+        /* ABOUT SECTION (Style Hero du portfolio) */
+        /* ===================================================== */
+        .about-section {
+            margin-bottom: 5mm;
+            padding: 4mm;
+            background: var(--hero-bg);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .about-text {
+            font-size: 9.5pt;
+            line-height: 1.6;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* ===================================================== */
+        /* SKILLS SECTION (Style Badges du portfolio) */
+        /* ===================================================== */
+        .skills-bar {
+            display: flex;
+            gap: 5mm;
+            margin-bottom: 5mm;
+            padding-bottom: 4mm;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-category {
+            flex: 1;
+        }
+
+        .skill-category-title {
+            font-size: 9pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 2mm;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .skill-category-title::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: inline-block;
+        }
+
+        .skill-list {
+            font-size: 8.5pt;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ===================================================== */
+        /* GENERAL SECTIONS */
+        /* ===================================================== */
+        .section {
+            margin-bottom: 5mm;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3.5mm;
+        }
+
+        .section-number {
+            font-size: 16pt;
+            font-weight: 900;
+            color: var(--primary);
+            margin-right: 2mm;
+            width: 8mm;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            flex: 1;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1mm;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+        }
+
+        .item {
+            margin-bottom: 2.5mm;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1mm;
+            gap: 3mm;
+        }
+
+        .item-title {
+            font-weight: 800;
+            font-size: 9.5pt;
+            color: var(--text);
+        }
+
+        .item-date {
+            font-size: 8pt;
+            color: var(--primary);
+            font-weight: 700;
+            white-space: nowrap;
+            background: var(--hero-bg);
+            padding: 2px 8px;
+            border-radius: 50px;
+        }
+
+        .item-subtitle {
+            font-size: 8.5pt;
+            color: var(--muted);
+            margin-bottom: 1mm;
+            font-weight: 600;
+        }
+
+        .item-description {
+            font-size: 8.5pt;
+            color: var(--text);
+            line-height: 1.45;
+            margin-bottom: 1.5mm;
+            text-align: justify;
+        }
+
+        /* Tags du portfolio appliqué aux technos du CV */
+        .item-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .tech-badge {
+            background: var(--hero-bg);
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 50px;
+            font-size: 7.5pt;
+            font-weight: 700;
+        }
+
+        /* ===================================================== */
+        /* FORMATION / CERTIFICATION CARDS */
+        /* ===================================================== */
+        .formation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3.5mm;
+        }
+
+        .formation-card {
+            padding: 3.5mm;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(16,24,40,.02);
+            transition: .2s;
+        }
+
+        .formation-title {
+            font-size: 8.5pt;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 1mm;
+            line-height: 1.3;
+        }
+
+        .formation-date {
+            font-size: 8pt;
+            color: var(--primary);
+            margin-bottom: 1mm;
+            font-weight: 700;
+        }
+
+        .formation-desc {
+            font-size: 8pt;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        /* ===================================================== */
+        /* PRINT SPECIFIC STYLES (Haute Fidélité PDF) */
+        /* ===================================================== */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+                background: #fff;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 4mm 4mm;
+            }
+
+            .section, .item, .formation-card {
+                page-break-inside: avoid;
+            }
+            
+            .tech-badge, .item-date {
+                background: #edf3ff !important;
+                color: #2563eb !important;
+            }
+            
+            .about-section {
+                background: #edf3ff !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- HEADER -->
+        <div class="header-section">
+            <div class="photo-container">
+                <img src="photo.jpg" alt="Photo Mohamed Moutalabi">
+            </div>
+            <div class="header-info">
+                <h1 class="name">Mohamed S. Moutalabi</h1>
+                <div class="title">Étudiant en Informatique de Gestion</div>
+                <div class="contact-bar">
+                    <div><i class="fa-solid fa-phone"></i> +229 01 45 42 12 53</div>
+                    <div><i class="fa-solid fa-envelope"></i> saobanemoutalabi@gmail.com</div>
+                    <div><i class="fa-solid fa-location-dot"></i> Sèmè-Podji, Bénin</div>
+                    <div><i class="fa-solid fa-globe"></i> <a href="#" class="portfolio-link">msm-portfolio.com</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="about-section">
+            <p class="about-text">
+                Étudiant de troisième année en Informatique de Gestion à l'ENEAM (Cotonou), spécialisé en Administration des Réseaux. 
+                Passionné par l'intersection entre le matériel et le logiciel, j'ai développé de solides compétences en développement web, 
+                systèmes embarqués et électronique. Rigoureux, créatif et orienté solutions, je participe activement à des 
+                hackathons et à des formations en cybersécurité pour rester à la pointe de la technologie.
+            </p>
+        </div>
+
+        <!-- SKILLS BAR -->
+        <div class="skills-bar">
+            <div class="skill-category">
+                <div class="skill-category-title">Technologies Web</div>
+                <div class="skill-list">HTML/CSS • JavaScript • React • PHP • Laravel • WordPress • jQuery • MySQL</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Systèmes & Réseaux</div>
+                <div class="skill-list">Python • Linux • Windows • Arduino • ARP • SNMP • VPN • WiFi</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Langues</div>
+                <div class="skill-list">Français (Courant) • Anglais (B2)</div>
+            </div>
+        </div>
+
+        <!-- FORMATION / EDUCATION -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-title">Éducation / Formations</div>
+            </div>
+            <div class="two-columns">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">ENEAM - Cotonou</div>
+                        <div class="item-date">2023 - 2026</div>
+                    </div>
+                    <div class="item-subtitle">Licence en Informatique de Gestion</div>
+                    <div class="item-description">Parcours Administration des Réseaux. Mentions : L1 : 14,28/20, L2 : 14,24/20. Cours complets en développement web, bases de données, réseaux et systèmes.</div>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">OMS Sciences</div>
+                        <div class="item-date">2022 - 2023</div>
+                    </div>
+                    <div class="item-subtitle">Baccalauréat Série D (Sciences)</div>
+                    <div class="item-description">Spécialité mathématiques et sciences physiques.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETS -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-title">Projets Marquants</div>
+            </div>
+            <div class="two-columns">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">AGOR@-EMES</div>
+                        <div class="item-date">2026</div>
+                    </div>
+                    <div class="item-subtitle">Projet de Stage de Fin d'Études</div>
+                    <div class="item-description">Solution intranet pour le suivi automatique des présences via la détection WiFi (ARP, DHCP, SNMP). Tableau de bord de supervision à distance, accès VPN et génération de rapports.</div>
+                    <div class="item-tech">
+                        <span class="tech-badge">Laravel</span><span class="tech-badge">React</span><span class="tech-badge">ARP</span><span class="tech-badge">SNMP</span><span class="tech-badge">VPN</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">ColorLab Pro</div>
+                        <div class="item-date">2026</div>
+                    </div>
+                    <div class="item-subtitle">Outil de Design System Personnel</div>
+                    <div class="item-description">Outil interactif de prototypage frontend avec un sélecteur de couleurs HSV personnalisé, des aperçus réactifs en temps réel (Bureau/Tablette/Mobile) et exportation CSS.</div>
+                    <div class="item-tech">
+                        <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">React</span><span class="tech-badge">Canvas</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">DocSecure</div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-subtitle">Projet Collaboratif Sécurisé</div>
+                    <div class="item-description">Plateforme de téléchargement de documents administratifs depuis n'importe quel navigateur. Développement agile en équipe et gestion complète du cycle de vie.</div>
+                    <div class="item-tech">
+                        <span class="tech-badge">Laravel</span><span class="tech-badge">MySQL</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">SneakersStore</div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-subtitle">Boutique E-commerce</div>
+                    <div class="item-description">Boutique de baskets en ligne dotée d'une interface utilisateur moderne, réactive et fluide avec catalogue complet de produits et gestion de panier.</div>
+                    <div class="item-tech">
+                        <span class="tech-badge">React</span><span class="tech-badge">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-title">Certifications & Événements</div>
+            </div>
+            <div class="formation-grid">
+                <div class="formation-card">
+                    <div class="formation-title">Cursor Hackathon UAC 2026</div>
+                    <div class="formation-date">Mars 2026</div>
+                    <div class="formation-desc">Attestation de participation exceptionnelle. Abomey-Calavi, Bénin.</div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-title">Formation OWASP Cybersécurité</div>
+                    <div class="formation-date">Déc 2025</div>
+                    <div class="formation-desc">« L'IA générative : Enjeux et menaces pour la cybercriminalité » – APDP.</div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-title">WordPress Pro</div>
+                    <div class="formation-date">Nov 2024</div>
+                    <div class="formation-desc">Création et déploiement de sites vitrines professionnels.</div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-title">Microsoft Office</div>
+                    <div class="formation-date">Sept 2024</div>
+                    <div class="formation-desc">Maîtrise avancée et professionnelle de Word & Excel.</div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-title">Canva Design</div>
+                    <div class="formation-date">En cours</div>
+                    <div class="formation-desc">Design graphique appliqué pour le web et supports d'impression.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

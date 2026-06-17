@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSM - Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+/* ===================================================== */
+/* ROOT */
+/* ===================================================== */
+
+:root{
+    --bg:#f5f8ff;
+    --surface:#ffffff;
+    --text:#101828;
+    --muted:#667085;
+    --primary:#2563eb;
+    --primary-dark:#1749b8;
+    --hero-bg:#edf3ff;
+    --shadow: 0 10px 30px rgba(16,24,40,.08);
+    --border:#e7ecf5;
+}
+
+/* ===================================================== */
+/* RESET */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    transition: background .3s ease, color .3s ease;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ===================================================== */
+/* NAVBAR */
+/* ===================================================== */
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 70px;
+    background:var(--surface);
+    position:sticky;
+    top:0;
+    z-index:9999;
+    border-bottom:1px solid var(--border);
+    transition:.3s;
+}
+
+.logo{
+    font-size:40px;
+    font-weight:900;
+    letter-spacing:-2px;
+    color:var(--text);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    position:relative;
+    font-weight:600;
+    padding-bottom:5px;
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:2px;
+    background:var(--primary);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.3s;
+    border-radius:50px;
+}
+
+.nav-links a:hover::after{
+    transform:scaleX(1);
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.theme-btn{
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:#f1f5f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.theme-btn:hover{
+    transform:translateY(-2px);
+}
+
+.cv-btn{
+    background:var(--primary);
+    color:white;
+    padding:14px 22px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow: 0 10px 25px rgba(37,99,235,.25);
+}
+
+.cv-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
+
+.hero{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    padding:90px 70px 70px;
+    background:var(--hero-bg);
+    overflow:hidden;
+}
+
+.hero-left{
+    width:50%;
+    z-index:5;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:white;
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:var(--shadow);
+    margin-bottom:25px;
+}
+
+body.dark .badge{
+    background:#1e293b;
+    color:#e2e8f0;
+}
+
+.hero-left h1{
+    font-size:78px;
+    line-height:.95;
+    letter-spacing:-3px;
+    margin-bottom:18px;
+}
+
+.hero-left h2{
+    color:var(--primary);
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    color:var(--muted);
+    line-height:1.9;
+    max-width:570px;
+    margin-bottom:32px;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 24px;
+    border-radius:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:white;
+    box-shadow: 0 10px 25px rgba(37,99,235,.25);
+}
+
+.primary-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    background:white;
+    color:var(--text);
+    box-shadow:var(--shadow);
+}
+
+.secondary-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* SOCIALS */
+
+.socials{
+    display:flex;
+    gap:15px;
+}
+
+.socials a{
+    width:48px;
+    height:48px;
+    background:white;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-5px);
+}
+
+/* ===================================================== */
+/* HERO RIGHT */
+/* ===================================================== */
+
+.hero-right{
+    width:50%;
+    position:relative;
+    min-height:650px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* BIG CIRCLE */
+
+.big-circle{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background: linear-gradient(135deg, #d7e3ff, #9db9ff);
+}
+
+/* WAVES */
+
+.hero-waves{
+    position:absolute;
+    width:700px;
+    height:700px;
+    top:-100px;
+    right:-100px;
+    border-radius:50%;
+    background: repeating-radial-gradient(
+        circle at center,
+        rgba(255,255,255,.25) 0px,
+        rgba(255,255,255,.25) 2px,
+        transparent 2px,
+        transparent 22px
+    );
+    opacity:.5;
+}
+
+/* DOTS */
+
+.dots{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background-image: radial-gradient(#7da4ff 2px, transparent 2px);
+    background-size:20px 20px;
+}
+
+.dots-left{
+    left:20px;
+    top:120px;
+}
+
+.dots-right{
+    right:70px;
+    top:50px;
+}
+
+/* IMAGE */
+
+.hero-image{
+    position:relative;
+    width:470px;
+    z-index:5;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
+}
+
+/* FLOATING CARD */
+
+.floating-card{
+    position:absolute;
+    left:10px;
+    top:270px;
+    width:230px;
+    background:white;
+    padding:24px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    z-index:10;
+    line-height:1.5;
+    font-weight:700;
+}
+
+.floating-card::after{
+    content:'';
+    position:absolute;
+    left:24px;
+    bottom:18px;
+    width:40px;
+    height:4px;
+    border-radius:50px;
+    background:var(--primary);
+}
+
+/* CODE BOX */
+
+.code-box{
+    position:absolute;
+    top:140px;
+    right:130px;
+    width:90px;
+    height:90px;
+    background:white;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    color:var(--primary);
+    box-shadow:var(--shadow);
+    z-index:10;
+}
+
+/* SMALL CIRCLE */
+
+.small-circle{
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#a5bfff;
+    right:20px;
+    bottom:60px;
+}
+
+/* ===================================================== */
+/* SECTIONS */
+/* ===================================================== */
+
+.section{
+    padding:60px 70px;
+}
+
+.section-title{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:28px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.section-title::before{
+    content:'';
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+/* ===================================================== */
+/* TECH STACK */
+/* ===================================================== */
+
+.tech-grid{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+}
+
+.tech-card{
+    background:white;
+    padding:22px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.tech-card:hover{
+    transform:translateY(-5px);
+}
+
+.tech-card i{
+    color:var(--primary);
+    font-size:20px;
+}
+
+/* ===================================================== */
+/* STATS */
+/* ===================================================== */
+
+.stats{
+    margin-top:35px;
+    background:#02153c;
+    padding:40px;
+    border-radius:25px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    color:white;
+}
+
+.stat h3{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.stat p{
+    color:#d5def6;
+}
+
+/* ===================================================== */
+/* PROJECTS */
+/* ===================================================== */
+
+.projects{
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scrollbar-width:none;
+}
+
+.projects::-webkit-scrollbar{
+    height:8px;
+    display:none;
+}
+
+.project-card{
+    min-width:390px;
+    width:390px;
+    max-width:390px;
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    flex-shrink:0;
+    flex-grow:0;
+    transition:.3s;
+    cursor:pointer;
+    user-select:none;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-image-container{
+    width:100%;
+    height:260px;
+    overflow:hidden;
+    background:#f1f5f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.project-preview{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+    transition:.4s;
+}
+
+.project-card:hover .project-preview{
+    transform:scale(1.03);
+}
+
+.project-content{
+    padding:24px;
+}
+
+.project-content .project-type {
+    font-size:11px;
+    text-transform:uppercase;
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:4px;
+    display:block;
+}
+
+.project-content h3{
+    margin-bottom:12px;
+}
+
+.project-content p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:20px;
+    font-size:14px;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:20px;
+    height: 68px;
+    align-content: flex-start;
+}
+
+.tags span{
+    background:#edf3ff;
+    color:var(--primary);
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.project-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.project-link{
+    color:var(--primary);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.project-icon{
+    width:35px;
+    height:35px;
+    background:#f1f5f9;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===================================================== */
+/* CERTIFICATIONS SECTION */
+/* ===================================================== */
+
+.certif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.certif-card {
+    background: white;
+    padding: 24px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.certif-card:hover {
+    transform: translateY(-5px);
+}
+
+.certif-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+}
+
+.certif-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.certif-card:hover .certif-preview {
+    transform: scale(1.03);
+}
+
+.certif-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.certif-issuer {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.certif-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.certif-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.certif-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.certif-desc {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===================================================== */
+/* ABOUT */
+/* ===================================================== */
+
+.about{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-image{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.about-content h2{
+    font-size:54px;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.about-content h2 span{
+    color:var(--primary);
+}
+
+.about-content p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.about-features{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:16px;
+}
+
+.feature{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.feature i{
+    color:var(--primary);
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.feature h4{
+    margin-bottom:10px;
+}
+
+/* ===================================================== */
+/* CTA */
+/* ===================================================== */
+
+.cta{
+    margin:20px 70px 40px;
+    background:#02153c;
+    color:white;
+    border-radius:28px;
+    padding:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.cta-left{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.cta-mail-icon{
+    width:80px;
+    height:80px;
+    min-width:80px;
+    background:#0d2d75;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.cta p{
+    color:#d1dbf5;
+    line-height:1.8;
+}
+
+.cta-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.cta-btn{
+    background:var(--primary);
+    color:white;
+    padding:15px 22px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+}
+
+.cta-social{
+    width:52px;
+    height:52px;
+    background:#102555;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:0 64px 38px;
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* ===================================================== */
+/* IMAGE MODAL WITH SLIDER */
+/* ===================================================== */
+
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:999999;
+}
+
+.image-modal.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+}
+
+.image-modal img{
+    max-width:100%;
+    max-height:80vh;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+.close-modal{
+    position:absolute;
+    top:-50px;
+    right:0;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+    transition: .2s;
+}
+.close-modal:hover {
+    color: var(--primary);
+}
+
+/* SLIDER NAVIGATION BUTTONS */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+.modal-nav:hover {
+    background: var(--primary);
+    transform: translateY(-50%) scale(1.05);
+}
+.modal-nav.prev-btn { left: -75px; }
+.modal-nav.next-btn { right: -75px; }
+
+.modal-counter {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ===================================================== */
+/* DARK MODE CHANGES */
+/* ===================================================== */
+
+body.dark{
+    --bg:#0f172a;
+    --surface:#1e293b;
+    --text:#ffffff;
+    --muted:#cbd5e1;
+    --hero-bg:#111827;
+    --border:#243045;
+}
+
+body.dark .navbar{
+    background:#0f172a;
+}
+
+body.dark .nav-links a,
+body.dark .logo{
+    color:white;
+}
+
+body.dark .theme-btn{
+    background:#334155;
+    color:white;
+}
+
+body.dark .secondary-btn,
+body.dark .socials a,
+body.dark .tech-card,
+body.dark .project-card,
+body.dark .feature,
+body.dark .about-image,
+body.dark .floating-card,
+body.dark .code-box,
+body.dark .certif-card {
+    background:#1e293b;
+    color:white;
+}
+
+body.dark .project-content p,
+body.dark .about-content p,
+body.dark .feature p,
+body.dark .certif-desc {
+    color:#cbd5e1;
+}
+
+body.dark .tags span{
+    background:#24334f;
+    color:#93c5fd;
+}
+
+body.dark .project-icon,
+body.dark .certif-image-container {
+    background:#24334f;
+}
+
+/* ===================================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================================== */
+
+@media(max-width:1200px){
+    .hero{
+        flex-direction:column;
+    }
+    .hero-left,
+    .hero-right{
+        width:100%;
+    }
+    .about{
+        grid-template-columns:1fr;
+    }
+    .tech-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .stats{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .certif-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-nav.prev-btn { left: 10px; }
+    .modal-nav.next-btn { right: 10px; }
+    .close-modal { right: 10px; top: -60px; }
+}
+
+@media(max-width:768px){
+    .navbar{
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+    .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .hero{
+        padding:50px 20px;
+    }
+    .hero-left h1{
+        font-size:48px;
+    }
+    .hero-left h2{
+        font-size:25px;
+    }
+    .hero-right{
+        min-height:450px;
+    }
+    .hero-image{
+        width:320px;
+    }
+    .big-circle{
+        width:420px;
+        height:420px;
+    }
+    .hero-waves{
+        width:400px;
+        height:400px;
+        right:-120px;
+    }
+    .floating-card,
+    .code-box{
+        display:none;
+    }
+    .hero-buttons{
+        flex-direction:column;
+    }
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+        justify-content:center;
+    }
+    .section{
+        padding:50px 20px;
+    }
+    .tech-grid{
+        grid-template-columns:1fr;
+    }
+    .stats{
+        grid-template-columns:1fr;
+    }
+    .project-card{
+        min-width:320px;
+        width:320px;
+        max-width:320px;
+    }
+    .about-features{
+        grid-template-columns:1fr;
+    }
+    .cta{
+        margin:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:30px;
+    }
+    .cta-left{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .cta h2{
+        font-size:32px;
+    }
+    .cta-actions{
+        width:100%;
+        flex-wrap:wrap;
+    }
+    .cta-btn{
+        width:100%;
+        justify-content:center;
+    }
+    footer{
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">MSM</div>
+
+    <nav class="nav-links">
+        <a href="#home">Accueil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#about">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="cv.pdf" download class="cv-btn">
+            Télécharger le CV
+            <i class="fa-solid fa-download"></i>
+        </a>
+    </div>
+
+</header>
+
+<section class="hero" id="home">
+
+    <div class="dots dots-left"></div>
+    <div class="dots dots-right"></div>
+    <div class="hero-waves"></div>
+
+    <div class="hero-left">
+        <span class="badge">👋 Salut, je suis</span>
+        <h1>Mohamed Saobane <br> Moutalabi</h1>
+        <h2>Étudiant en Informatique de Gestion</h2>
+        <p>
+            Troisième année à l'ENEAM (Cotonou), spécialité Administration Réseau. 
+            Passionné par l'intersection du matériel et du logiciel, le développement web moderne 
+            et la mise en place d'infrastructures fluides et sécurisées.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="primary-btn">
+                Voir mes projets
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="cv.pdf" download class="secondary-btn">
+                Télécharger mon CV (PDF)
+                <i class="fa-solid fa-download"></i>
+            </a>
+        </div>
+
+        <div class="socials">
+            <a href="https://github.com/username"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/username"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:saobanemoutalabi@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="cv.pdf"><i class="fas fa-file"></i></a>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="big-circle"></div>
+        <div class="hero-waves"></div>
+        <img src="saobane.png" class="hero-image">
+        <div class="floating-card">
+            Concevoir des <br> solutions numériques <br> à fort impact
+        </div>
+        <div class="code-box">&lt;/&gt;</div>
+        <div class="small-circle"></div>
+    </div>
+
+</section>
+
+<section class="section" id="competences">
+
+    <h2 class="section-title">Compétences Techniques</h2>
+
+    <div class="tech-grid">
+        <div class="tech-card"><i class="fab fa-php"></i> PHP / Laravel</div>
+        <div class="tech-card"><i class="fab fa-js"></i> JavaScript / React</div>
+        <div class="tech-card"><i class="fas fa-database"></i> MySQL</div>
+        <div class="tech-card"><i class="fas fa-wind"></i> Tailwind CSS</div>
+        <div class="tech-card"><i class="fab fa-linux"></i> Linux & Python</div>
+        <div class="tech-card"><i class="fas fa-network-wired"></i> ARP / SNMP / VPN</div>
+        <div class="tech-card"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+        <div class="tech-card"><i class="fab fa-wordpress"></i> WordPress</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat"><h3>10+</h3><p>Projets Terminés</p></div>
+        <div class="stat"><h3>2</h3><p>Certifications Majeures</p></div>
+        <div class="stat"><h3>3</h3><p>Années d'Études (ENEAM)</p></div>
+        <div class="stat"><h3>1000+</h3><p>Heures de Code</p></div>
+    </div>
+
+</section>
+
+<section class="section" id="projects">
+
+    <h2 class="section-title">Projets Réalisés</h2>
+
+    <div class="projects">
+
+        <article class="project-card" data-images="15.jpg,16.jpg,17.jpg,18.jpg">
+            <div class="project-image-container"><img src="15.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet de Fin de Cycle (En cours)</span>
+                <h3>AGOR@-EMES</h3>
+                <p>Solution Intranet pour le suivi automatique de la présence des apprenants via détection WiFi (ARP, DHCP, SNMP). Comprend un tableau de bord de supervision à distance, accès sécurisé VPN et génération automatique de rapports.</p>
+                <div class="tags"><span>Laravel</span><span>React</span><span>ARP</span><span>SNMP</span><span>VPN</span><span>MySQL</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Galerie photos <i class="fa-solid fa-images"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-images="8.jpg,9.jpg,10.jpg">
+            <div class="project-image-container"><img src="8.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet Personnel</span>
+                <h3>ColorLab Pro</h3>
+                <p>Outil de prototypage de Design System interactif frontend. Comprend un sélecteur de couleurs HSV personnalisé, des aperçus réactifs en direct (Bureau/Tablette/Mobile) et l'exportation fluide de variables CSS.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span><span>React</span><span>Canvas</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Galerie photos <i class="fa-solid fa-images"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-images="3.jpg,2.jpg,1.jpg">
+            <div class="project-image-container"><img src="3.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet Collaboratif</span>
+                <h3>DocSecure</h3>
+                <p>Plateforme hautement sécurisée de téléchargement de documents administratifs depuis n'importe quel navigateur. Gestion complète du cycle de vie du projet réalisé en équipe.</p>
+                <div class="tags"><span>Laravel</span><span>MySQL</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Voir l'image <i class="fa-solid fa-image"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-images="19.jpg,20.jpg,21.jpg">
+            <div class="project-image-container"><img src="19.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet Personnel</span>
+                <h3>SneakersStore</h3>
+                <p>Boutique d'E-commerce de baskets en ligne dotée d'une interface utilisateur moderne, réactive et fluide avec catalogue complet de produits et gestion du panier d'achat.</p>
+                <div class="tags"><span>React</span><span>MySQL</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Galerie photos <i class="fa-solid fa-images"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-images="11.jpg,12.jpg,13.jpg,14.jpg">
+            <div class="project-image-container"><img src="11.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet de Fin d'Année</span>
+                <h3>Attendance Management ENEAM</h3>
+                <p>Application web robuste développée en binôme pour suivre l'assiduité des étudiants aux cours. Projet présenté et validé devant un jury académique.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span><span>Laravel</span><span>MySQL</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Voir l'image <i class="fa-solid fa-image"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-images="4.jpg,5.jpg,6.jpg,7.jpg">
+            <div class="project-image-container"><img src="4.jpg" class="project-preview"></div>
+            <div class="project-content">
+                <span class="project-type">Projet Vitrine</span>
+                <h3>Site "Le Gourmet"</h3>
+                <p>Site web professionnel et élégant pour un restaurant haut de gamme. Inclut la présentation des menus, une galerie de photos immersive et un formulaire de contact dynamique.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-footer">
+                    <span class="project-link">Voir l'image <i class="fa-solid fa-image"></i></span>
+                    <div class="project-icon"><i class="fab fa-github"></i></div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<section class="section" id="certifications">
+
+    <h2 class="section-title">Certifications & Participations</h2>
+
+    <div class="certif-grid">
+
+        <div class="certif-card" data-images="cursor-hackathon.jpg">
+            <div class="certif-image-container">
+                <img src="cursor-hackathon.jpg" class="certif-preview" alt="Attestation Cursor">
+            </div>
+            <div class="certif-content">
+                <span class="certif-issuer">Cursor Bénin</span>
+                <h3>Cursor Hackathon UAC 2026</h3>
+                <div class="certif-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 21 Mars 2026</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Abomey-Calavi</span>
+                </div>
+                <p class="certif-desc">
+                    Attestation de participation exceptionnelle décernée pour le Hackathon Cursor 
+                    organisé à l'Université d'Abomey-Calavi (UAC), remis par l'Ambassadeur Cursor Bénin (Régis A. R. KIKI).
+                </p>
+            </div>
+        </div>
+
+        <div class="certif-card" data-images="owasp.jpg">
+            <div class="certif-image-container">
+                <img src="owasp.jpg" class="certif-preview" alt="Attestation OWASP">
+            </div>
+            <div class="certif-content">
+                <span class="certif-issuer">OWASP Cotonou Chapter</span>
+                <h3>Intelligence artificielle générative : Un nouvel allié pour les cybercriminels ?</h3>
+                <div class="certif-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 04 Décembre 2025</span>
+                    <span><i class="fa-solid fa-location-dot"></i> APDP</span>
+                </div>
+                <p class="certif-desc">
+                    Attestation de participation à la formation avancée de cybersécurité portant sur les enjeux, 
+                    risques et menaces de l'IA générative exploitée par la cybercriminalité. Signée par le président Emery K. ASSOGBA.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section about" id="about">
+
+    <div class="about-image"><img src="about-image.jpg"></div>
+
+    <div class="about-content">
+        <h2>Je conçois des solutions pour le <span>web.</span></h2>
+        <p>
+            Rigoureux, créatif et orienté solutions, j'aime développer des applications robustes tout en m'assurant de la stabilité des réseaux sous-jacents. Je participe activement à des hackathons pour repousser mes limites.
+        </p>
+
+        <div class="about-features">
+            <div class="feature">
+                <i class="fas fa-gears"></i>
+                <h4>Problem Solver</h4>
+                <p>Résolution logique, rapide et efficace des problèmes complexes.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-rocket"></i>
+                <h4>Apprenant Rapide</h4>
+                <p>Toujours en veille technologique sur les nouveautés du secteur.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users"></i>
+                <h4>Esprit d'Équipe</h4>
+                <p>J'aime collaborer, partager et construire des projets à forte valeur.</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <div class="cta-left">
+        <div class="cta-mail-icon"><i class="fa-regular fa-envelope"></i></div>
+        <div>
+            <h2>Travaillons ensemble !</h2>
+            <p>Je suis toujours ouvert à de nouvelles opportunités et à des projets passionnants.</p>
+        </div>
+    </div>
+
+    <div class="cta-actions">
+        <a href="contact.html" class="cta-btn">Me Contacter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="mailto:saobanemoutalabi@gmail.com" class="cta-social"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/username" class="cta-social"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/username" class="cta-social"><i class="fab fa-github"></i></a>
+    </div>
+
+</section>
+
+<footer>
+    <p>MSM</p>
+    <p>© 2026 Mohamed Saobane Moutalabi — Conçu avec HTML, CSS & JavaScript</p>
+    <p><a href="#home">Retour en haut ↑</a></p>
+</footer>
+
+<div class="image-modal" id="imageModal">
+    <div class="modal-wrapper">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <button class="modal-nav prev-btn" id="modalPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="modalImage" alt="Aperçu grand format">
+        <button class="modal-nav next-btn" id="modalNext"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="modal-counter" id="modalCounter">1 / 1</div>
+    </div>
+</div>
+
+<script>
+
+/* DARK MODE TOGGLE */
+const themeBtn = document.getElementById('themeBtn');
+
+themeBtn.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    const icon = themeBtn.querySelector('i');
+    if(document.body.classList.contains('dark')){
+        icon.className = 'fa-solid fa-sun';
+    } else {
+        icon.className = 'fa-solid fa-moon';
+    }
+});
+
+/* SMOOTH INFINITE CAROUSEL FOR PROJECTS */
+const projects = document.querySelector('.projects');
+
+/* DUPLICATE CARDS FIRST (CRITICAL: Must happen BEFORE document.querySelectorAll) */
+projects.innerHTML += projects.innerHTML;
+let speed = 1;
+
+function autoScroll(){
+    projects.scrollLeft += speed;
+    if(projects.scrollLeft >= projects.scrollWidth / 2){
+        projects.scrollLeft = 0;
+    }
+    requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
+/* STOP SCROLL ON HOVER */
+projects.addEventListener('mouseenter',()=>{ speed = 0; });
+/* RESUME SCROLL */
+projects.addEventListener('mouseleave',()=>{ speed = 1; });
+
+
+/* MODAL SLIDER WINDOW FOR PROJECTS & CERTIFICATIONS */
+let currentImages = [];
+let currentImgIndex = 0;
+
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.getElementById('closeModal');
+const modalPrev = document.getElementById('modalPrev');
+const modalNext = document.getElementById('modalNext');
+const modalCounter = document.getElementById('modalCounter');
+
+// Ouvrir le modal pour une carte donnée
+function openModalForCard(card) {
+    const rawImages = card.getAttribute('data-images') || card.getAttribute('data-image');
+    if (rawImages) {
+        currentImages = rawImages.split(',').map(img => img.trim());
+        currentImgIndex = 0;
+        updateModalContent();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Clic sur image OU lien "Galerie/Voir l'image" => ouvre le modal
+// Clic sur .project-icon (github) => ne fait rien
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.project-icon')) return;
+    if (e.target.closest('a[href]')) return;
+
+    const imgContainer = e.target.closest('.project-image-container');
+    if (imgContainer) {
+        const card = imgContainer.closest('.project-card');
+        if (card) { openModalForCard(card); return; }
+    }
+
+    const link = e.target.closest('.project-link');
+    if (link) {
+        const card = link.closest('.project-card');
+        if (card) { openModalForCard(card); return; }
+    }
+
+    const certImg = e.target.closest('.certif-image-container');
+    if (certImg) {
+        const card = certImg.closest('.certif-card');
+        if (card) openModalForCard(card);
+    }
+});
+
+function updateModalContent() {
+    if(currentImages.length > 0) {
+        modalImage.src = currentImages[currentImgIndex];
+        modalCounter.textContent = `${currentImgIndex + 1} / ${currentImages.length}`;
+        
+        // Cacher ou afficher les flèches et le compteur selon le nombre d'images
+        if(currentImages.length <= 1) {
+            modalPrev.style.display = 'none';
+            modalNext.style.display = 'none';
+            modalCounter.style.display = 'none';
+        } else {
+            modalPrev.style.display = 'flex';
+            modalNext.style.display = 'flex';
+            modalCounter.style.display = 'block';
+        }
+    }
+}
+
+// Navigation : Image précédente
+modalPrev.addEventListener('click', (e) => {
+    e.stopPropagation(); // Évite de fermer le modal en cliquant sur la flèche
+    currentImgIndex = (currentImgIndex - 1 + currentImages.length) % currentImages.length;
+    updateModalContent();
+});
+
+// Navigation : Image suivante
+modalNext.addEventListener('click', (e) => {
+    e.stopPropagation(); // Évite de fermer le modal en cliquant sur la flèche
+    currentImgIndex = (currentImgIndex + 1) % currentImages.length;
+    updateModalContent();
+});
+
+// Fermer le modal via la croix
+closeModal.addEventListener('click',()=>{
+    modal.classList.remove('active');
+    document.body.style.overflow='auto';
+});
+
+// Fermer le modal en cliquant à l'extérieur de l'image
+modal.addEventListener('click',(e)=>{
+    if(e.target === modal || e.target.classList.contains('modal-wrapper')){
+        modal.classList.remove('active');
+        document.body.style.overflow='auto';
+    }
+});
+
+</script>
+
+</body>
+</html>
